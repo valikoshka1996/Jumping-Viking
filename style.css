@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #87CEEB;
+  font-family: Arial, sans-serif;
+  flex-direction: column;
+}
+
+#game-container {
+  position: relative;
+  width: 600px;
+  height: 200px;
+  background-color: #fff;
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+#hero {
+  position: absolute;
+  bottom: 10px;
+  left: 50px;
+  width: 30px;
+  height: 50px;
+  background-image: url('textures/man.png');  /* Додаємо текстуру */
+  background-size: cover;  /* Зберігаємо пропорції текстури */
+  background-position: center;  /* Центруємо текстуру */
+  border-radius: 5px;
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background-color: #228B22;
+}
+
+.obstacle {
+  position: absolute;
+  bottom: 10px;
+  width: 20px;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+#controls {
+  position: fixed;  /* Виправлення: зробимо кнопки фіксованими */
+  bottom: 20px;  /* Відстань віднизу екрану */
+  left: 50%;
+  transform: translateX(-50%);  /* Центруємо кнопки по горизонталі */
+  display: flex;
+  gap: 20px;
+  z-index: 10;  /* Щоб кнопки були на поверхні гри */
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
